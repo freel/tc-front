@@ -47,7 +47,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://188.213.170.53/api'
+    baseURL: 'https://pub.freel.me/api'
   },
   /*
   ** Auth module configuration

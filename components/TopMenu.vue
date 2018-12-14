@@ -21,7 +21,7 @@
           href="#"
           class="top-nav-back">
           <img
-            src="~/assets/icons/back 1.svg"
+            src="~/assets/icons/Back 1.svg"
             class="mr-2">
           Back
         </b-nav-item>
