@@ -42,19 +42,21 @@ export default {
 @import '~/assets/scss/base.scss';
 $font-size: $font-size-base * 0.75;
 .navbar-left {
-  position: fixed !important;
-  line-height: 2.2;
-  top: $tp-height;
-  left: 0;
-  bottom: 0;
+  position: absolute !important;
+  // width: 1rem;
+  // margin-left: 0.5rem;
   z-index: 1050;
   background-color: $lp-color !important;
   align-items: baseline !important;
   font-size: $font-size;
   text-align: center;
+  .navbar-toggler {
+    position: absolute;
+  }
   .navbar-collapse {
     padding-top: 0.5rem;
     .navbar-nav {
+      margin-top: 1.5rem;
       width: $lp-width;
       .nav-link {
         padding: 1rem 0;
@@ -74,6 +76,18 @@ $font-size: $font-size-base * 0.75;
           margin-right: auto;
         }
       }
+    }
+  }
+}
+@media (min-width: 576px) {
+  .navbar-left {
+    position: fixed !important;
+    line-height: 2.2;
+    top: $tp-height;
+    left: 0;
+    bottom: 0;
+    .navbar-toggler {
+      margin-left: $lp-width;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="table-wrapper-scroll-y">
-    <table class="table table-hover table-sm table-borderless table-striped">
+    <table class="table table-responsive table-hover table-sm table-borderless table-striped">
       <thead>
         <tr>
           <th scope="col">Type</th>

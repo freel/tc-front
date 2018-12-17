@@ -34,8 +34,13 @@ export default {
 <style lang="scss" scope>
 @import '~/assets/scss/base.scss';
 .content-layout {
-  margin-left: $lp-width;
   margin-top: $tp-height;
   padding: 1.25rem;
+  // when width > 720
+}
+@media (min-width: 576px) {
+  .content-layout {
+    margin-left: $lp-width;
+  }
 }
 </style>

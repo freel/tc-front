@@ -17,7 +17,8 @@
       id="nav_collapse"
       is-nav >
 
-      <b-navbar-nav>
+      <b-navbar-nav
+        v-if="loggedIn">
         <b-nav-item
           href="#"
           class="top-nav-back">
@@ -108,6 +109,10 @@ $font-size: $font-size-base * 0.875;
   }
   .navbar-collapse {
     padding: 0 0.75rem;
+    background-color: #fff;
+    &.show {
+      box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
     .nav-item img {
       margin-right: 0.5rem;
     }
@@ -115,6 +120,9 @@ $font-size: $font-size-base * 0.875;
       font-size: $font-size;
       width: 118px;
     }
+  }
+  .navbar-toggler {
+    margin-right: 1rem;
   }
   .dropdown-toggle::after {
     padding-left: 0.25rem;
