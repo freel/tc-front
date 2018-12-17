@@ -1,23 +1,41 @@
 <template>
   <div class="content-layout">
-    <content-body v-if="loggedIn"/>
+    <content-body
+      v-if="loggedIn">
+      <template slot="content">
+        <content-table
+          :providers="providers"/>
+      </template>
+    </content-body>
   </div>
 </template>
 
 <script>
 import ContentBody from '@/components/Content.vue'
+import ContentTable from '~/components/ContentTable.vue'
 
 export default {
   components: {
-    ContentBody
+    ContentBody,
+    ContentTable
+  },
+  data() {
+    return {
+      providers: []
+    }
+  },
+  async asyncData({ $axios }) {
+    const providers = await $axios.$get('providers')
+    return { providers: providers.data }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
+@import '~/assets/scss/base.scss';
 .content-layout {
-  margin-left: 70px;
-  margin-top: 3.75rem;
+  margin-left: $lp-width;
+  margin-top: $tp-height;
   padding: 1.25rem;
 }
 </style>

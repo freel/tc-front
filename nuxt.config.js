@@ -24,7 +24,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [{ src: '~assets/css/font.css' }],
+  css: ['~/assets/css/font.css', '~/assets/scss/custom.scss'],
 
   /*
   ** Plugins to load before mounting the App
@@ -48,6 +48,7 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
     baseURL: 'https://pub.freel.me/api'
+    // baseURL: 'http://localhost:8000/api'
   },
   /*
   ** Auth module configuration

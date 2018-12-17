@@ -19,13 +19,10 @@
         </vue-stars>
 
       </div>
-      <!-- <input
-      type="text"
-      name=""
-      value="Type here"> -->
       <b-form-textarea
-        id="textarea1"
-        :rows="3"
+        id="textarea"
+        :rows="4"
+        v-model="feedback"
         placeholder="Type here"
       />
 
@@ -49,24 +46,41 @@ export default {
   components: {
     VueStars
   },
-  data: () => ({})
-}
-</script>
-<style lang="scss">
-.modal-title {
-  font-weight: 700;
-  font-size: 1rem;
-}
-.modal-header {
-  border-bottom: 0;
-}
-.modal-footer {
-  border-top: 0;
-}
-button {
-  border: 0 !important;
-  .btn-lg {
-    height: 2.5rem;
+  data() {
+    return {
+      feedback: ''
+    }
   }
 }
+</script>
+<style lang="scss" scope>
+.form-control {
+  font-size: 0.875rem;
+}
+.modal-header {
+  padding-bottom: 0.5rem;
+}
+.modal-body {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.vue-stars label {
+  width: 1.8rem !important;
+}
+// .modal-title {
+//   font-weight: 700;
+//   font-size: 1rem;
+// }
+// .modal-header {
+//   border-bottom: 0;
+// }
+// .modal-footer {
+//   border-top: 0;
+// }
+// button {
+//   border: 0 !important;
+//   .btn-lg {
+//     height: 2.5rem;
+//   }
+// }
 </style>

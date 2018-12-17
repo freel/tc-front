@@ -1,48 +1,79 @@
 <template lang="html">
-  <b-nav
-    class="navbar-left"
-    vertical >
-    <b-nav-item>
-      <img src="~/assets/icons/Dashboard.svg">
-      Dashboard
-    </b-nav-item>
-    <b-nav-item>
-      <img src="~/assets/icons/FAQ.svg">
-      FAQ
-    </b-nav-item>
-    <b-nav-item>
-      <img src="~/assets/icons/Sign out.svg">
-      Sign out
-    </b-nav-item>
-  </b-nav>
+  <b-navbar
+    toggleable
+    class="navbar-left">
+    <b-navbar-toggle target="left_nav_collapse" />
+
+    <b-collapse
+      id="left_nav_collapse"
+      is-nav >
+
+      <b-navbar-nav
+        class="flex-column">
+        <b-nav-item>
+          <img src="~/assets/icons/Dashboard.svg">
+          Dashboard
+        </b-nav-item>
+        <b-nav-item>
+          <img src="~/assets/icons/FAQ.svg">
+          FAQ
+        </b-nav-item>
+        <b-nav-item
+          @click="logout">
+          <img src="~/assets/icons/Sign out.svg">
+          Sign out
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>
 export default {
-  components: {}
+  methods: {
+    logout() {
+      this.$auth.logout()
+    }
+  }
 }
 </script>
 
-<style lang="scss">
-$navbar-left-bg-color: #264e66;
+<style lang="scss" scope>
+@import '~/assets/scss/base.scss';
+$font-size: $font-size-base * 0.75;
 .navbar-left {
-  text-align: center;
+  position: fixed !important;
+  line-height: 2.2;
+  top: $tp-height;
   left: 0;
-  width: 4.375rem;
-  position: fixed;
-  top: 3.75rem;
-  padding-top: 0.5rem;
-  line-height: 1.5rem;
   bottom: 0;
-  background-color: $navbar-left-bg-color;
-  a {
-    padding: 1rem 0;
-    font-weight: 700;
-    color: white;
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+  z-index: 1050;
+  background-color: $lp-color !important;
+  align-items: baseline !important;
+  font-size: $font-size;
+  text-align: center;
+  .navbar-collapse {
+    padding-top: 0.5rem;
+    .navbar-nav {
+      width: $lp-width;
+      .nav-link {
+        padding: 1rem 0;
+        font-weight: 700;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+          background-color: darken($lp-color, 10%) !important;
+          // transform: scale(1.1);
+          color: white;
+          box-shadow: $box-shadow;
+          transition: 0.2s;
+        }
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
     }
   }
 }

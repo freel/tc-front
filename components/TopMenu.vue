@@ -1,7 +1,9 @@
 <template lang="html">
   <b-navbar
     toggleable="md"
-    variant="white">
+    class="navbar-top"
+    variant="white"
+    fixed="top">
 
     <b-navbar-brand
       href="#"
@@ -13,7 +15,6 @@
 
     <b-collapse
       id="nav_collapse"
-      class="pr-4"
       is-nav >
 
       <b-navbar-nav>
@@ -21,15 +22,13 @@
           href="#"
           class="top-nav-back">
           <img
-            src="~/assets/icons/Back 1.svg"
-            class="mr-2">
+            src="~/assets/icons/Back 1.svg">
           Back
         </b-nav-item>
         <b-nav-form
-          class="px-3">
+          class="px-4">
           <b-input-group>
             <b-form-input
-              class="border-right-0"
               placeholder="Go to case ID#"/>
             <b-input-group-append>
               <b-btn
@@ -41,16 +40,16 @@
             </b-input-group-append>
           </b-input-group>
         </b-nav-form>
-        <b-nav-item href="#">
+        <b-nav-item
+          href="#">
           <img
-            src="~/assets/icons/Fulfillment KPIs.svg"
-            class="mr-2">
+            src="~/assets/icons/Fulfillment KPIs.svg">
           Fulfillment KPIs
         </b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ml-auto mr-2">
         <template v-if="!loggedIn">
           <b-nav-item href="#">
             <nuxt-link
@@ -95,71 +94,36 @@ export default {
 }
 </script>
 
-<style lang="scss">
-$input-bg-color: #f5f9fc;
-$input-color: #728b9b;
-$input-border-color: #dbe5eb;
-$navbar-brand-bg-color: #264e66;
-$font-color: #345;
-.navbar {
-  padding: 0 0;
-  position: fixed;
-  height: 3.75rem;
-  top: 0;
-  width: 100%;
-  line-height: 0.875rem;
-  vertical-align: baseline;
-  font-size: 0.875rem;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.04);
-  .nav-link {
-    color: $font-color !important;
-    span {
-      margin-left: 0.7rem;
-      margin-right: 0.7rem;
-    }
-    img {
-      vertical-align: inherit;
-    }
+<style lang="scss" scope>
+@import '~/assets/scss/base.scss';
+$font-size: $font-size-base * 0.875;
+.navbar-top {
+  height: $tp-height;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+  font-size: $font-size;
+  .navbar-brand {
+    width: $lp-width;
+    background-color: $lp-color;
+    text-align: center;
   }
-  .top-nav-back {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    text-transform: uppercase;
+  .navbar-collapse {
+    padding: 0 0.75rem;
+    .nav-item img {
+      margin-right: 0.5rem;
+    }
+    .form-control {
+      font-size: $font-size;
+      width: 118px;
+    }
   }
   .dropdown-toggle::after {
+    padding-left: 0.25rem;
     content: url('../assets/icons/Dropdown.svg');
     border: 0;
   }
 }
-.navbar-brand {
-  background-color: $navbar-brand-bg-color;
-  width: 4.375rem;
-  height: 3.75rem;
-  text-align: center;
-  padding-top: 0.9375rem;
-  margin-right: 0.75rem;
-}
-.input-group {
-  .form-control {
-    width: 115px;
-    background-color: $input-bg-color;
-    height: 2.2rem;
-    border-radius: 0.3125rem;
-    font-size: 0.875rem;
-    color: $input-color;
-    border-color: $input-border-color;
-  }
-  .input-group-append {
-    width: 2.5rem;
-    .btn {
-      padding: 0;
-    }
-    img {
-      height: 2.2rem;
-    }
-  }
-}
-.btn {
-  border-radius: 0.3125rem;
+.top-nav-back {
+  font-weight: 700;
+  text-transform: uppercase;
 }
 </style>

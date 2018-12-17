@@ -1,0 +1,50 @@
+// Body
+$body-bg: #ebeff4;
+$body-color: #354650;
+
+// Colors
+$lp-color: #264e66; // left panel color
+$theme-colors: (
+  "primary": #54d0ff,
+  "secondary": #29c480,
+);
+$navbar-light-hover-color: theme-color('primary');
+$navbar-light-active-color: $body-color;
+
+// Input
+$input-bg: #f5f9fc;
+$input-border-radius: 0.3125rem;
+$btn-border-radius: 0.3125rem;
+$input-height: 2.1875rem;
+$input-color: #728b9b;
+$input-border-color: #dbe5eb;
+
+// Sizes
+$tp-height: 3.75rem; // top panel height
+$lp-width: 4.375rem; // left panel width
+$navbar-image-height: 1.8125rem; // brand image height
+$border-radius: 0.375rem;
+$modal-content-border-radius: 0.375rem;
+$btn-border-radius-lg: 0.375rem;
+$btn-border-width: 0;
+$modal-header-border-width: 0;
+$font-size-lg: 0.875rem;
+
+// Padding
+$navbar-padding-x: 0;
+$navbar-padding-y: 0;
+$navbar-brand-padding-x: 0;
+$navbar-brand-padding-y: ($tp-height - $navbar-image-height) / 2;
+$btn-padding-x: 0;
+$btn-padding-y: 0;
+$btn-padding-y-lg: 0.6rem;
+
+// Tables
+$table-border-width: 0;
+
+// Buttons
+$btn-line-height-sm: 1.375rem;
+$btn-border-radius-sm: 0.25rem;
+
+// Bootstrap and its default variables
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";

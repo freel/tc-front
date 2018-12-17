@@ -1,7 +1,7 @@
 <template>
   <div class="container top">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">Login</div>
           <div class="card-body">
@@ -51,7 +51,7 @@
                 <div class="col-md-8 offset-md-4">
                   <button
                     type="submit"
-                    class="btn btn-primary">
+                    class="btn btn-sm btn-primary">
                     Login
                   </button>
                 </div>

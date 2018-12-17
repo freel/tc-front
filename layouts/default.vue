@@ -19,13 +19,4 @@ export default {
 </script>
 
 <style lang="scss">
-$body-bg-color: #ebeff4;
-$default-color: #354650;
-body {
-  background-color: $body-bg-color;
-  font-family: 'Lato';
-  font-size: 0.75rem;
-  color: $default-color;
-  line-height: 1rem;
-}
 </style>

@@ -1,0 +1,35 @@
+@import '~/assets/scss/custom.scss';
+
+$box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+
+body {
+  font-family: 'Lato';
+  font-size: $font-size-base * 0.875;
+}
+
+// Small buttons minimal width
+.btn-sm {
+  min-width: 60px;
+  font-weight: 700;
+}
+
+.btn-sm,
+.btn-lg {
+  color: white !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn-primary{
+  &:hover,
+  &:active{
+    background-color: #00b9ff;
+  }
+}
+
+.btn-secondary{
+  &:hover,
+  &:active{
+    background-color: #00b063;
+  }
+}
